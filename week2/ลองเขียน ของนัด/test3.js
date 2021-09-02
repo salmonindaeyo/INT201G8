@@ -6,7 +6,7 @@ if(x === 3){
 // console.log('This is y outside: ',y); // y ไม่สามารถประกาศนอก scope block function ได้
 
 
-let  x = 3 
+var x = 3 
 if(x === 3){
     var y = 4
     console.log('This is y :',y); // This is y : 4
