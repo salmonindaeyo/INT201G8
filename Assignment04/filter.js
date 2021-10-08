@@ -1,4 +1,13 @@
 //filter()
+/*Syntax 
+    arr.filter(function(element, index, array)) 
+
+//Arrow Function
+    arr.filter((element) => { ... } )
+    arr.filter((element, index) => { ... } )
+    arr.filter((element, index, array) => { ... } )
+
+*/
 
 //ตัวอย่าง Callblack function 
 let ages = [10,12,18,22,35,40,45,50,60];
@@ -24,7 +33,7 @@ let ids = [101,102,103,104,105];
 const checkId = ids.filter((id,index) => id < 102 || index == 3); //return idที่ <102 หรือ มี index อยู่ตำแหน่งที่ 3 เท่านั้น
 console.log(checkId);
 
-//array.filter((element, index, array) => { ... } )
+//ตัวอย่าง array.filter((element, index, array) => { ... } )
 let animals = ['ant','bird','cat','dog','frog'];
 const choose = animals.filter((animal,index,arr)=>{ //ไม่จำเป็นต้องใช้ parameter ครบทุกตัวก็ได้
 
