@@ -18,8 +18,6 @@ function checkAge(age){ //age คือ element แต่ละตัวที�
 console.log(ages.filter(checkAge));  //[18, 22, 35, 40, 45, 50, 60]
 
 
-
-
 //ตัวอย่าง array.filter(function(value, index, arr)) 
 let num = [0,1,2,3,4,5,6,7,8,9,10,11,12,13];
 const evenNum = num.filter(function (element,index,array){
@@ -28,22 +26,16 @@ const evenNum = num.filter(function (element,index,array){
 console.log(evenNum);
 
 
-
-
 //ตัวอย่าง array.filter((element) => { ... } )
 let scores = [68,75,70,80,85,90,82];
 const checkScore = scores.filter(score => score >= 80); //return คะแนนที่ >= 80 เท่านั้น
 console.log(checkScore);
 
 
-
-
 //ตัวอย่าง array.filter((element, index) => { ... } )
 let ids = [101,102,103,104,105];
 const checkId = ids.filter((id,index) => id < 102 || index == 3); //return idที่ <102 หรือ มี index อยู่ตำแหน่งที่ 3 เท่านั้น
 console.log(checkId);
-
-
 
 
 //ตัวอย่าง array.filter((element, index, array) => { ... } )
