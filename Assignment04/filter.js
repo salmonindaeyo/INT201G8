@@ -1,5 +1,5 @@
 //filter()
-/*Syntax 
+/*//Syntax 
     arr.filter(function(element, index, array)) 
 
 //Arrow Function
@@ -36,9 +36,18 @@ console.log(checkId);
 //ตัวอย่าง array.filter((element, index, array) => { ... } )
 let animals = ['ant','bird','cat','dog','frog'];
 const choose = animals.filter((animal,index,arr)=>{ //ไม่จำเป็นต้องใช้ parameter ครบทุกตัวก็ได้
-
-    arr.pop();              //ดึง frog ออกจาก array นี้ (arr หมายถึง animals)
-    arr.push('rat');        //เพิ่ม rat ต่อท้าย array นี้
-    return animal.length==3;//ดึง element ที่มีความยาวเท่ากับ 3 เท่านั้น     
+    arr.pop();                  //ดึง frog ออกจาก array นี้ (arr หมายถึง animals)
+    arr.push('rat');            //เพิ่ม rat ต่อท้าย array นี้
+    return animal.length==3;    //ดึง element ที่มีความยาวเท่ากับ 3 เท่านั้น     
 });
 console.log(choose);        
+
+let words = ['spray', 'limit', 'exuberant', 'destruction', 'elite', 'present'];
+
+const modifiedWords = words.filter((word, index, arr) => {
+  arr[index + 1] += ' extra';
+  console.log(arr);
+  return word.length < 6;
+});
+
+console.log(modifiedWords);
