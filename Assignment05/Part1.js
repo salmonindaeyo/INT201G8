@@ -71,3 +71,21 @@ console.log(findTotal());
 
 
 //4.Arguments in function >> เรียก param ที่ไม่ได้เปิดรับ แต่มีโยนเข้ามา
+//function เพิ่มสินค้าลงตะกร้า
+function busket() {
+    let userBusket = [];
+  
+    //Arguments Parameters
+    function addToBusket() {
+        //เพิ่มสินค้าทั้งหมดลงตะกร้า
+        for (let i = 0; i < arguments.length; i++) {
+            userBusket.push(arguments[i]);
+        }
+        return userBusket;
+    }
+    return addToBusket;
+ }
+  
+ const user = busket();
+ console.log(user('Phone13','Macbook Pro'));
+ console.log(user('Apple Watch', 'Ipad mini'));
