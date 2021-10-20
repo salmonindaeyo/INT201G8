@@ -35,8 +35,8 @@ export function createProduct(){
 
 
 //-----Function part 3  Default parameter -----
-export function findTotal(price=0,quatity=1){
-    return price*quatity;
+export function findTotal(price=0,quantity=1){
+    return price*quantity;
 }
 
 

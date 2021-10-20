@@ -63,12 +63,12 @@ console.log(iPhone(132,'iphone 13 Pro',38900,'RAM 6GB','ROM 128GB','5G','Blue'))
 
 //3.Default parameter >> กำหนดค่าใน param 
 //function คำนวณราคารวมของสินค้า
-function findTotal(price=0,quatity=1){ //ถ้าไม่มีส่งค่า parameter มา จะกำหนดค่าเริ่มต้นให้ price=0 และ quatity=1
-    return price*quatity;
+function findTotal(price=0,quantity=1){ //ถ้าไม่มีส่งค่า parameter มา จะกำหนดค่าเริ่มต้นให้ price=0 และ quantity=1
+    return price*quantity;
 }
 console.log(findTotal(150,4));  //600 ()
-console.log(findTotal(200));    //200 (มาจาก 200*1 โดย price=200 แต่ 1 คือ ค่าเริ่มต้นของ quatity)
-console.log(findTotal());       //0 (มาจาก 0*1 ที่ได้จากค่าเริ่มต้นของ price*quatity)
+console.log(findTotal(200));    //200 (มาจาก 200*1 โดย price=200 แต่ 1 คือ ค่าเริ่มต้นของ quantity)
+console.log(findTotal());       //0 (มาจาก 0*1 ที่ได้จากค่าเริ่มต้นของ price*quantity)
 
 
 //4.Arguments in function >> เรียก parameter ที่ซ่อนอยู่ทั้งหมด เป็น parameter ที่ไม่มีใน funciton
@@ -89,4 +89,3 @@ function busket() {
  const user = busket();
  console.log(user('Phone13','Macbook Pro'));
  console.log(user('Apple Watch', 'Ipad mini'));
- 
