@@ -1,3 +1,4 @@
+//Export functions
 //-----Function part 1 Higher-Order Functions -----
 export function excute(array,fn,other){
     return fn(array,other);
