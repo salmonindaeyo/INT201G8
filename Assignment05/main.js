@@ -6,7 +6,6 @@ import {excute,countElement,addElement,searchName,
 
 //Test function part 1
 let listCoffee = ['Americano','Cappuccino','Espresso','Latte','Mocha'];
-console.log(listCoffee);
 console.log(excute(listCoffee,countElement)); 
 console.log(excute(listCoffee,addElement,'Tea'));
 console.log(excute(listCoffee,searchName,'Espresso'));  
