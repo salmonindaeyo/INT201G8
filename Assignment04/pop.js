@@ -21,3 +21,30 @@ for (let i = 0; i < arr3.length; i++) {
     i--;
 }
 console.log(newArr)
+
+
+
+
+/////////////////////////////////
+
+
+let Student = ['nut','nice','tan'];
+
+Student.pop();
+
+console.log(Student);
+
+
+///////////////////////////////
+
+
+
+
+
+
+
+let Student = ['nut','nice','tan'];
+
+console.log(Student.pop());
+
+console.log(Student);

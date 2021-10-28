@@ -37,7 +37,26 @@ fruits.push('watermelon');
 
 
 
+///////////////////////////////////////
 
 
+let Student = ['nut','nice','tan'];
+
+console.log(Student);
+//Student.push('john');
+Student.push('john','jame');
+console.log(Student);
+
+
+
+//////////////////////////////////////
+
+
+
+
+
+let Student = ['nut','nice','tan'];
+
+console.log(Student.push('john'));
 
 
