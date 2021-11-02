@@ -1,5 +1,7 @@
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
       .card {
@@ -11,7 +13,7 @@
         background-color: white;
         
         float: left;
-        margin: 150px;
+        margin: 50px;
         padding: 50px;
       
       }
@@ -46,21 +48,37 @@ background-size: cover;
 }
 
     #heading {
-        margin-top: 50px;
-        font-size: 30px;
-        margin-bottom: -120px;
+          text-align: center;
+    }
+
+    .center {
+      text-align: center;
     }
 
       </style>
   </head>
   <body>
       <div id="heading">
-      <center> <h1>ProductList</h1> </center> 
+      <h1>ProductList</h1> 
       </div>
+
+      <div id = "search" class = "center"> 
+       ค้นหาสินค้า   <input type="text" id="fname" name="fname"> 
+              
+
+
+      <div id= "productSearch"></div>
+      
+      
+      
+      </div>
+
       <div id ="products">
         
       </div>
-      <script src = "main.js" type="module"></script>
+
+      
+      <script src = "main.js" type="module"> </script>
       
     
 
