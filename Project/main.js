@@ -4,39 +4,99 @@ window.onload = startup;
 
 const divProductsEle = document.querySelector('#products');
 const answers = document.querySelectorAll("#fname")
-const divSearch = document.querySelector('#search');
-let divProductsEleShow;
+
+let divProductsEleShow = document.createElement('div') ;
 
 function startup () {
+    CreateCard(product)
+    countCart();
+    CheckProduct();
+}
+
+
+const answers2 = document.querySelectorAll("#fname2")    //รับคำตอบ search
+
+answers2.forEach((answers2) => {
+    answers2.addEventListener('change',phoneSearch3);
+})
+
+
+function phoneSearch3 () {
+
+    answers2.forEach((answers2)=>{
+        
+       var data = searchData(answers2.value , product)
+        console.log(data.length)
+
+        if(!(data.length==0)){
+            divProductsEleShow.remove();
+            CreateCard(data)
+        }else
+        divProductsEleShow.remove();
+        
+        if(data.length==0) {
+            startup ()
+        }
+                    
+    })
+}
+
+
+
+function searchData(value , data) {         //หาชื่อใน product
+    var filterData = []
+    
+        for (var i = 0; i < data.length; i++) {
+            value = value.toLowerCase();
+            var name = data[i].name.toLowerCase();
+
+            if (name.includes(value) & !(value =='')) {
+                filterData.push(data[i])
+            }
+            
+        }
+
+
+    return filterData
+}
+
+
+
+function CreateCard(data) { 
+    
     divProductsEleShow = document.createElement('div');
 
-for (let i = 0; i < product.length; i++) {
+for (let i = 0; i < data.length; i++) {
   
 const divProduct = document.createElement('div');
 divProduct.setAttribute('class', "card");
 
 const productImg = document.createElement('img');
-productImg.setAttribute('src', product[i].id+".jpg");
+productImg.setAttribute('src', data[i].id+".jpg");
 productImg.setAttribute('width', "200");
 
 const productName = document.createElement('h1');
-productName.textContent = product[i].name ;
+productName.textContent = data[i].name ;
 
 const productPrice = document.createElement('p');
 productPrice.setAttribute('class', "price");
 
-productPrice.textContent = "$ " + product[i].price ;
+productPrice.textContent = "$ " + data[i].price ;
 
 const productColor = document.createElement('p');
-productColor.textContent = "The color of this phone is " + product[i].color;
+productColor.textContent = "The color of this phone is " + data[i].color;
 
 const productStock = document.createElement('p');
-productStock.textContent = "Still have "+ product[i].stock + " units for sale.";
+productStock.textContent = "Still have "+ data[i].stock + " units for sale.";
 
 const buttonProduct = document.createElement('button');
 buttonProduct.textContent = "Add to Cart" ;
-
-
+buttonProduct.setAttribute('id', data[i].id);
+buttonProduct.onclick = function (event) {
+            Cart.push(event.target.id)
+            console.log(Cart)
+            countCart();
+    }
 
 divProduct.appendChild(productImg);
 divProduct.appendChild(productName);
@@ -48,116 +108,35 @@ divProduct.appendChild(buttonProduct);
 divProductsEleShow.appendChild(divProduct);
 divProductsEle.appendChild(divProductsEleShow);
 }
-
-//const divSearch = document.querySelector('#search');
-
-//let inputName = document.createElement("input");
-//inputName.setAttribute("type", "text");
-//inputName.setAttribute("id", "phoneName");
-//inputName.setAttribute("onchange", "phoneSearch");
-
-//divSearch.appendChild(inputName);
-
-
- //     let  addButton = document.createElement("input");
- //   addButton.setAttribute("type", "button");
- //   addButton.setAttribute("value", "clear");
- //   addButton.setAttribute("onclick", "ClearPage ()");
-  //  document.body.appendChild(addButton);
-
-
-}
-
-
-//function ClearPage () {
-
-
- //   const testt = document.createElement('h1');
- //   testt.textContent = "555555555" ; 
- //   divSearch.appendChild(testt);
-    
-//}
-    
-  
-answers.forEach((answers) => {
-    answers.addEventListener('change',phoneSearch2);
-})
-
-
-function phoneSearch2 () {
-
-            let CheckAnswer = false;
-            let CheckIndex = 0;
-        answers.forEach((answers)=>{
-            
-            for (let i = 0; i < product.length; i++) {
-                if (answers.value == product[i].name) {
-                    CheckAnswer = true; 
-                    CheckIndex = i;
-                }
-            }
-            
-        })
-
-        if (CheckAnswer) {
-            const divProductSearch = document.querySelector('#productSearch');
-           
-            let divProduct = document.createElement('div');
-            divProduct.setAttribute('id', "delete");
-    divProduct.setAttribute('class', "card");
-
-    const productImg = document.createElement('img');
-    productImg.setAttribute('src', product[CheckIndex].id+".jpg");
-    productImg.setAttribute('width', "200");
-
-    const productName = document.createElement('h1');
-    productName.textContent = product[CheckIndex].name ;
-
-    const productPrice = document.createElement('p');
-    productPrice.setAttribute('class', "price");
-
-    productPrice.textContent = "$ " + product[CheckIndex].price ;
-
-    const productColor = document.createElement('p');
-    productColor.textContent = "The color of this phone is " + product[CheckIndex].color;
-
-    const productStock = document.createElement('p');
-    productStock.textContent = "Still have "+ product[CheckIndex].stock + " units for sale.";
-
-    const buttonProduct = document.createElement('button');
-    buttonProduct.textContent = "Add to Cart" ;
-
-
-
-    divProduct.appendChild(productImg);
-    divProduct.appendChild(productName);
-    divProduct.appendChild(productPrice);
-    divProduct.appendChild(productColor);
-    divProduct.appendChild(productStock);
-    divProduct.appendChild(buttonProduct);
-
-
-    divProductSearch.appendChild(divProduct);
-
-    divProductsEleShow.remove();
-
-        }
-
-
-        if (CheckAnswer == false) {
-            const test = document.querySelector('#delete');
-            test.remove();
-            startup();
-            
-        }
-
-
-
 }
 
 
 
 
+let Cart = [];
+
+function  countCart () {
+    
+    let countCart = document.querySelector("#countCart") ;
+
+    countCart.textContent = Cart.length;
+
+}
 
 
+function CheckProduct() {
+
+    let CheckProduct = document.querySelector("#CheckProduct")
+
+    CheckProduct.onclick = function () {
+
+
+    if(Cart.length==0){
+        alert("ไม่มีสินค้า")
+    }else
+         alert(Cart)
+}
+
+    
+}
 

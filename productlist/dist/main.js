@@ -86,15 +86,16 @@ class CookieUtil {
 //------------------------------------------------------------------//
 //### Create search bar ###
 const menubar = document.querySelector('#menubar');
-const divSearchInput = document.querySelector('#search-input');
+const divSearchInput = document.querySelector('#search-button');
 // const divSearch = document.querySelector('#icon');
 
 const searchImg = document.createElement('img');
 searchImg.setAttribute('id','icon-search');
-searchImg.setAttribute('src','../img/search.png');
+searchImg.setAttribute('src',"../img/search.png");
 searchImg.setAttribute('width','25px');
 searchImg.setAttribute('height','25px');
-searchImg.className = 'inline my-2 mr-2';
+searchImg.setAttribute('style','position: absolute; width: 40px; bottom: 15px; left: 190px');
+
 
 const input = document.createElement('input');
 input.className = 'border-1 rounded-full my-2 border-black-400 border-solid mx-4 px-3 py-2 focus:border-green-400 items-center focus:outline-none';
@@ -109,12 +110,11 @@ searchButton.setAttribute('id', 'search-button');
 searchButton.setAttribute('style', 'display: none;');
 
 //***Add Child */
-cartbar.appendChild(searchImg);
+const iconSearch = document.querySelector('#iconSearch'); //Search icon on nav
+iconSearch.appendChild(searchImg);
 divSearchInput.appendChild(input);
-divSearchInput.appendChild(searchButton);
-menubar.appendChild(divSearchInput);
 cartbar.className ='mr-80';
-divSearchInput.className = 'absolute right-3';
+
 
 //### Add Event Icon Cart ###
 cartImg.addEventListener('click', viewCart);
@@ -130,6 +130,7 @@ icon.addEventListener('click', function() {
     if (input.getAttribute('type') == "hidden" || btnSearch.getAttribute('style')=="display: none;") {
         input.setAttribute('type', "text");
         btnSearch.removeAttribute('style');
+        
     } else {
         input.setAttribute('type', "hidden");
         btnSearch.setAttribute('style', 'display: none;');
@@ -150,7 +151,7 @@ export function showProduct(p) {
         const productDiv = document.createElement('div');
         productDiv.id = product.id;
         productDiv.className = 'shadow-lg rounded-lg py-10 px-10 inline-block w-auto';
-
+        productDiv.style.backgroundColor = 'white';
         const picDiv = document.createElement('div')
         picDiv.className = 'mb-10';
 

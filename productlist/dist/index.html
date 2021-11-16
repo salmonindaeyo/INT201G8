@@ -16,17 +16,32 @@
 
 <body style="font-family: 'Poppins', sans-serif;">
     <div id="heading">
-        <h2 class="mt-20 text-black text-center">Product List</h2>
+        
+        <nav id ="nav" class="navbar navbar-expand-lg navbar-light " style="
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(255, 255, 255, 0.1); ;
+      ">
+        <h2 id="NameShop" style="margin-left: 45px;margin-right: 45px; ">PHONE SHOP</h2> 
+        <span id = "iconSearch" style="position: absolute; width: 40px; bottom: 0px; left: 70px" ></span>
+        <span id = "search-button" style="position: absolute;  left: 530px"> </span>
+        <span id = "cart" style="position: absolute;  right: 10px"> </span>
+        <img src="darkmode.png"id="dark-mode-toggle" class="dark-mode-toggle"  style="position: absolute; width: 40px; bottom: 10px; right: 190px">
+
+
+        </button>
+        </div>
+    </nav>
     </div>
-    <div id="menubar" class="grid justify-items-end mx-16 inline-block">
-        <div id="cart"></div>
-        <div id="search-input"></div>
-        <!-- <div id="icon"></div> -->
+
+    <div id="menubar" class="grid justify-items-end mx-16 inline-block">    
+
     </div>
     <div class="justify-items-center container-lg">
         <div id="products" class="m-10 grid lg:grid-cols-4 md:grid-cols-1 gap-4">
         </div>
     </div>
+
+    <script src="./darkMode.js"></script>
     <script src="./main.js" type="module"></script>
 </body>
 
