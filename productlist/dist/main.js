@@ -9,7 +9,6 @@ import { inputSearch, buttonSearch} from "./searchFunction.js";
 //### Check Cart Item ###
 checkCart();
 
-//------------------------------------------------------------------//
 //### Create Item Cart Bar (มีทั้งรูปกระเป๋าไว้ดูสินค้า มีตัวหนังสือแสดงจำนวนในกระเป๋า มีกดเพื่อลบสินค้าในตะกล้า) ###
 const cartbar = document.querySelector('#cart');
  
@@ -38,12 +37,9 @@ binImg.setAttribute('width','25px');
 binImg.setAttribute('height','25px');
 binImg.className = 'inline my-2 mr-2';
 
-
 cartbar.appendChild(cartImg);   //เพิ่มกระเป๋าสินค้า
 cartbar.appendChild(numOfItems); //เพิ่มตัวหนังสือแสดงจำนวนสินค้า
 cartbar.appendChild(binImg);   //เพิ่มที่เคลียสินค้า
-
-
 //------------------------------------------------------------------//
 
 //## Cookie Button
@@ -125,7 +121,6 @@ input.addEventListener('keyup',inputSearch);
 //*ปรับแก้ปุ่ม search ให้แล้ว
 searchButton.addEventListener('click',buttonSearch);
 
-
 //-------------------------------------------------------------------//
 //### Show all product ###
 const divProductEle = document.querySelector('#products'); //**ย้ายบรรทัดนี้ออกมาจาก function showProduct */
@@ -190,16 +185,14 @@ export function showProduct(p) {
                 localStorage.setItem('cartId', cart.productId);
                 localStorage.setItem('cartQTY', cart.totalQTY);
                 localStorage.setItem('myCart', JSON.stringify(cart.product));
-
                 //----------------------------------------------------------//
                 console.log(cart);
-
             } else {
                 alert(`Sorry, this product sold out`);
             }
         });
-
         //-------------------------------------------------------------------//
+
 //***Add Child */
         picDiv.appendChild(productImg)
         productDiv.appendChild(picDiv);
@@ -212,7 +205,6 @@ export function showProduct(p) {
     });
 }
 showProduct(products);
-
 //-------------------------------------------------------------------//
 
 export {
