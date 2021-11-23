@@ -29,7 +29,7 @@ if(localStorage.getItem('cartQTY') == null){
 }
 numOfItems.className = 'inline';
 
-// สร้างไอคอน เคลียตะกล้าสินค้า
+// สร้างไอคอน เคลียตะกร้าสินค้า
 const binImg = document.createElement('img');
 binImg.setAttribute('id','icon-bin');
 binImg.setAttribute('src','../img/bin.png');

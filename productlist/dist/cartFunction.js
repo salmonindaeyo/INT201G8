@@ -8,7 +8,7 @@ export function checkCart(){
     let cartId = localStorage.getItem('cartId');
     let cartQTY = localStorage.getItem('cartQTY');
     let myCart = localStorage.getItem('myCart');
-    if(cartId==null&&cartQTY==null&&myCart==null){ //ถ้าใน local ไม่มีไรก็ไม่ต้องทำอะไร 
+    if(cartId==null){     //ถ้าใน local ไม่มีตะกร้าก็ไม่ต้องทำอะไร 
         return cart;
     }else{
         cart.productId = cartId.split(",");     //ดึงข้อมูลจากใน local
