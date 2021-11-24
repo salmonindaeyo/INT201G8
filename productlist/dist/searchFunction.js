@@ -1,5 +1,4 @@
-import { products } from "./product.js";
-import { input,showProduct,divProductEle } from "./main.js";
+import { input,divProductEle } from "./main.js";
 
 // # รับข้อความที่พิมตอน search แล้วกด enter ได้เลย
 export function inputSearch(event){

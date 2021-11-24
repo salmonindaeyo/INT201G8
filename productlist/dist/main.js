@@ -61,9 +61,7 @@ cookiesButton.addEventListener('click',function(){
 
 //------------------------------------------------------------------//
 //### Create search bar ###
-const menubar = document.querySelector('#menubar');
 const divSearchInput = document.querySelector('#search-button');
-
 
 //สร้างรูปปุ่มค้นหา
 const searchImg = document.createElement('img');
@@ -150,8 +148,8 @@ export function showProduct(p) {
         productStock.className = 'text-green-300';
         productStock.setAttribute('class', 'stock');
 
-        const butDiv = document.createElement('div')
-        butDiv.className = 'text-center';
+        const buyDiv = document.createElement('div')
+        buyDiv.className = 'text-center';
 
         const button = document.createElement('button');
         button.innerHTML = "Buy"
@@ -199,8 +197,8 @@ export function showProduct(p) {
         productDiv.appendChild(productName);
         productDiv.appendChild(productPrice);
         productDiv.appendChild(productStock)
-        butDiv.appendChild(button);
-        productDiv.appendChild(butDiv);
+        buyDiv.appendChild(button);
+        productDiv.appendChild(buyDiv);
         divProductEle.appendChild(productDiv);
     });
 }
